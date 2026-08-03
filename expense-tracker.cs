@@ -14,7 +14,6 @@ namespace ExpenseTracker
       //  Expenses.Add(new("shoes", 25.4, "USD", DateOnly.FromDateTime(DateTime.Now), "nothin", true ));
       AddExpense(Expenses);
       Console.WriteLine(Expenses[0]);
-
     }
 
     static void AddExpense(List<ExpenseType> expensesArray)
@@ -40,18 +39,18 @@ namespace ExpenseTracker
         {
           parsedAmount = resulta;
         }
-        else if (isRejected == true)
+        else
         {
           isRejected = true;
-          Console.Write("I CAN SEE YOU ARE NOT SERIOUS ABOUT THIS");
+          Console.WriteLine("I CAN SEE YOU ARE NOT SERIOUS ABOUT THIS");
         }
       }
 
-      if (isRejected)
-      {
+        
         string currency = "USD";
         DateOnly entryDate = DateOnly.FromDateTime(DateTime.Now);
 
+      
         Console.Write("Enter Description: ");
         string description = Console.ReadLine() ?? "No Description";
 
@@ -70,7 +69,6 @@ namespace ExpenseTracker
         // }
 
         expensesArray.Add(new(expense, parsedAmount, currency, entryDate, description, isPaid));
-      }
     }
   }
 }
