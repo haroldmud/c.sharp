@@ -49,7 +49,6 @@ namespace ExpenseTracker
         
         string currency = "USD";
         DateOnly entryDate = DateOnly.FromDateTime(DateTime.Now);
-
       
         Console.Write("Enter Description: ");
         string description = Console.ReadLine() ?? "No Description";
