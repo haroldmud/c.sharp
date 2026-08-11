@@ -66,7 +66,6 @@ namespace ExpenseTracker
         //   Console.WriteLine("No");
         //   isPaid = false;
         // }
-
         expensesArray.Add(new(expense, parsedAmount, currency, entryDate, description, isPaid));
     }
   }
