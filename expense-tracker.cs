@@ -126,6 +126,23 @@ namespace ExpenseTracker
     //    (records are just data, so RemoveAt is enough — no need to "find" anything first)
     static void RemoveExpense(List<ExpenseType> expensesArray)
     {
+      ListExpenses(expensesArray);
+      if (expensesArray.Count == 0)
+      {
+        return;
+      }
+
+      Console.Write("Enter the index of the expense to remove: ");
+      string input = Console.ReadLine() ?? "";
+
+      if (!int.TryParse(input, out int index) || index < 0 || index >= expensesArray.Count)
+      {
+        Console.WriteLine("Invalid index.");
+        return;
+      }
+
+      expensesArray.RemoveAt(index);
+      Console.WriteLine("Expense removed.");
     }
 
     // TODO: implement this yourself. Steps to follow:
