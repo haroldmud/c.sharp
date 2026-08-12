@@ -162,6 +162,48 @@ namespace ExpenseTracker
     //    ("with" is C# record syntax — it copies `old` and only changes the fields you list)
     static void EditExpense(List<ExpenseType> expensesArray)
     {
+      ListExpenses(expensesArray);
+      if (expensesArray.Count == 0)
+      {
+        return;
+      }
+
+      Console.Write("Enter the index of the expense to edit: ");
+      string indexInput = Console.ReadLine() ?? "";
+
+      if (!int.TryParse(indexInput, out int index) || index < 0 || index >= expensesArray.Count)
+      {
+        Console.WriteLine("Invalid index.");
+        return;
+      }
+
+      ExpenseType old = expensesArray[index];
+
+      Console.Write($"Enter new name (blank to keep '{old.Expense}'): ");
+      string nameInput = Console.ReadLine() ?? "";
+      string newExpense = nameInput == "" ? old.Expense : nameInput;
+
+      Console.Write($"Enter new amount (blank to keep '{old.Amount}'): ");
+      string amountInput = Console.ReadLine() ?? "";
+      double newAmount = old.Amount;
+      if (amountInput != "")
+      {
+        if (double.TryParse(amountInput, out double parsedAmount))
+        {
+          newAmount = parsedAmount;
+        }
+        else
+        {
+          Console.WriteLine("Invalid amount, keeping the old value.");
+        }
+      }
+
+      Console.Write($"Enter new description (blank to keep '{old.Description}'): ");
+      string descriptionInput = Console.ReadLine() ?? "";
+      string? newDescription = descriptionInput == "" ? old.Description : descriptionInput;
+
+      expensesArray[index] = old with { Expense = newExpense, Amount = newAmount, Description = newDescription };
+      Console.WriteLine("Expense updated.");
     }
   }
 }
