@@ -2,8 +2,9 @@
   "folder-color.pathColors": [],
   "[csharp]": {
     "editor.maxTokenizationLineLength": 2500,
-    "editor.tabSize": 2,
-    "editor.fontSize": 24,
+    "editor.tabSize": 4,
+    "editor.fontSize": 16,
+    "editor.fontFamily": "Candara",
     "editor.semanticHighlighting.enabled": true,
     "editor.suggestOnTriggerCharacters": true,
     "editor.quickSuggestions": {
