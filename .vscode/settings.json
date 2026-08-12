@@ -1,3 +1,15 @@
 {
-  "folder-color.pathColors": []
+  "folder-color.pathColors": [],
+  "[csharp]": {
+    "editor.maxTokenizationLineLength": 2500,
+    "editor.tabSize": 2,
+    "editor.fontSize": 24,
+    "editor.semanticHighlighting.enabled": true,
+    "editor.suggestOnTriggerCharacters": true,
+    "editor.quickSuggestions": {
+      "other": "offWhenInlineCompletions",
+      "comments": "off",
+      "strings": "off"
+    }
+  }
 }
