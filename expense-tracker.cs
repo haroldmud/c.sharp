@@ -45,9 +45,6 @@ namespace ExpenseTracker
       }
     }
 
-    // Shows every expense with its index so the user can pick one
-    // for Remove/Edit. Handles the empty-list case explicitly so
-    // Remove/Edit don't have to repeat that check.
     static void ListExpenses(List<ExpenseType> expensesArray)
     {
       if (expensesArray.Count == 0)
