@@ -3,7 +3,7 @@
   "[csharp]": {
     "editor.maxTokenizationLineLength": 2500,
     "editor.tabSize": 4,
-    "editor.fontSize": 10,
+    "editor.fontSize": 12,
     "editor.fontFamily": "Corsiva Hebrew",
     "editor.semanticHighlighting.enabled": true,
     "editor.suggestOnTriggerCharacters": true,
